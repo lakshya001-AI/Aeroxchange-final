@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEROXCHANGE:ContactUs</title>
+    <link rel="stylesheet" href="contactus.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gruppo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gruppo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+
+
+    <nav class="navbar" id="navbar">
+        <h1 class="navtitle">AEROXCHANGE</h1>
+        <div class="listbtn">
+          <ul class="list">
+            <a href="index.html" id="homesec">Home</a>
+            <a href="invest.html" id="invest">Invest</a>
+          <a href="Profile.html" id="aboutus">Profile</a>
+          <a href="aboutus.html" id="aboutus">About Us</a>
+          </ul>
+          <button class="contactus" style="color: black">
+            <a href="contactus.html">Contact Us</a>
+          </button>
+        </div>
+      </nav>
+
+      <section class="contactussection" id="contactussection">
+
+        <div class="contactus1">
+          <h3>ContactUs</h3>
+          <p class="contactuspara1">Welcome to <span
+            style="
+              font-family: 'Gruppo', sans-serif;
+              font-size: 23px;
+              font-weight: 700;
+              color: white;
+              margin: 5px;
+              border-bottom: solid 2px white;
+            "
+            >"AEROXCHANGE"</span>! Need help or have questions about our platform or aircraft tokenization? Reach out to us or fill out the form. Our team is here to assist you. Thank you for choosing AeroXchange!</p>
+          <p class="contactuspara2"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i><a href="mailto:contact.aeroxchange@gmail.com" style="color: white;">contact.aeroxchange@gmail.com</a></p>
+          <div class="linkedin-twitter">
+            <i class="fa-brands fa-linkedin fa-2xl i1" style="color: #ffffff;"></i>
+            <i class="fa-brands fa-x-twitter fa-2xl" style="color: #ffffff;"></i>
+          </div>
+        </div>
+        <div class="contactus2">
+          
+            <input type="text" placeholder="Enter Your Name" required id="name">
+            <input type="email" placeholder="Enter Your Email" required id="email">
+            <textarea type="text" placeholder="Your Message" required id="message"></textarea>
+            <button type="button" id="submitbtn">Submit</button>
+          
+        </div>
+
+      </section>
+
+    <script src="https://kit.fontawesome.com/e26316daf2.js" crossorigin="anonymous"></script>
+
+    <script type="module">
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+      import { getDatabase, ref, set, get, child} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
+
+      const firebaseConfig = {
+          apiKey: "AIzaSyAWNu1p2ivRTtmp3cAT04ifyicyxKNsvco",
+          authDomain: "aeroxchange-d99ca.firebaseapp.com",
+          projectId: "aeroxchange-d99ca",
+          storageBucket: "aeroxchange-d99ca.appspot.com",
+          messagingSenderId: "243314062567",
+          appId: "1:243314062567:web:9b7aa93a1c0699a56ade42"
+      };
+
+      const app = initializeApp(firebaseConfig);
+  
+      const db = getDatabase(app);
+
+      
+
+      document.getElementById("submitbtn").addEventListener("click", function(e){
+
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
+
+          console.log(name, email, message);
+
+
+
+          if(name && email && message){
+
+              set(ref(db, 'ContactInfo/' + name), {
+                Name: name,
+                Email: email,
+                Message: message
+              });
+              alert("Thank you for choosing AeroXchange! we will contact you shortly");
+              document.getElementById("name").value = "";
+              document.getElementById("email").value = "";
+              document.getElementById("message").value = "";
+
+          }else{
+              alert("Please fill all the details");
+          }
+  });
+
+
+
+  </script>
+
+
+
+    
+</body>
+</html>

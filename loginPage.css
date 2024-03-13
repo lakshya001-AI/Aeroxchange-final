@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #195fc2;
+}
+
+.heading {
+  width: 100%;
+  padding: 10px;
+}
+
+.loginpagemain {
+  width: 100%;
+  height: 100%;
+  padding: 6vmax 20vmax;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginpage {
+  width: 100%;
+  height: 90%;
+  background-color: white;
+  /* border-radius: 10px; */
+  display: flex;
+  flex-direction: row;
+  z-index: 10;
+}
+
+.loginpage .image {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-image: url("login1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* border-radius: 20px; */
+}
+
+.image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(148, 148, 148, 0.5);
+  /* border-radius: 20px; */
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 10;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.loginpage .info {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.info .info-para1 {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.info input {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: solid 2px black;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 10px;
+}
+
+.info #loginbtn {
+  padding: 10px 60px;
+  background-color: #195fc2;
+  color: white;
+  border: 0;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.info #loginbtn a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+
+.info-para2 {
+  margin: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.googlelogin img {
+  cursor: pointer;
+}
+
+body {
+  position: relative;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(183, 181, 181, 0) 0%,
+    rgba(0, 0, 0, 0.8) 150%
+  );
+}
+
+.signup-para1 {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 10px;
+}
+
+.signup-para1 .signupbtn {
+  border: 0;
+  margin: 5px;
+  background-color: none;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  color: #195fc2;
+  cursor: pointer;
+}
+
+/* signup page */
+
+.signupPage {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signupPage .signuppage-para1 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.signupPage input {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: solid 2px black;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 10px;
+}
+
+.signupPage .signupbutton {
+  border: 0;
+  background-color: #195fc2;
+  padding: 8px 30px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.signupPage .signuppage-para2 {
+  font-family: "Montserrat", sans-serif;
+}
+
+#spantag {
+  font-size: 32px;
+}
+
+#backtologin {
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #195fc2;
+}
+
+/* Here i am going to get the media query for the login page */
+
+@media only screen and (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+
+  .loginpagemain {
+    width: 100%;
+    height: 100%;
+    padding: 7vmax 2vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loginpage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .image {
+    width: 100%;
+    height: 50%;
+    margin-top: 20px;
+    padding: 20px 30px;
+  }
+  .content p {
+    font-size: 13px;
+  }
+
+  #spantag {
+    font-size: 17px;
+  }
+
+  .info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info input {
+    width: 100%;
+    margin-bottom: 20px;
+    border: solid 2px black;
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 10px;
+  }
+
+  .togosignup p {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+  }
+  .togosignup p button {
+    width: 160px;
+    padding: 10px;
+    background-color: none;
+    margin-bottom: 30px;
+  }
+
+  .info-para2 {
+    display: none;
+  }
+
+  .googlelogin {
+    display: none;
+  }
+
+  .signupPage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .signuppage-para1 {
+    margin-top: 20px;
+  }
+
+  .signuppage-para2 {
+    margin-bottom: 20px;
+  }
+  #backtologin{
+    width: 160px;
+    padding: 10px;
+    background-color: none;
+    margin-bottom: 30px;
+  }
+
+  .backtologindiv p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .backtologindiv p button{
+    margin-top: 10px;
+  }
+    
+}

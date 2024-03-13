@@ -1,0 +1,257 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #114084; /* Color of the scrollbar handle */
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0a2c59; /* Darker color when hovering over the handle */
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Navbar starts here */
+
+.navbar {
+  width: 100%;
+  height: fit-content;
+  background-color: #114084;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  position: fixed; /* Fix the navbar at the top */
+  top: 0; /* Position it at the top */
+  left: 0;
+  z-index: 1000;
+  border-bottom: solid 2px white;
+}
+
+.navtitle {
+  font-family: "Gruppo", sans-serif;
+  margin: 10px;
+  color: whitesmoke;
+}
+
+.list a {
+  padding-bottom: 5px;
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: "Montserrat", sans-serif;
+  margin: 10px;
+  border-bottom: solid white 0px;
+}
+
+/* #homesec{
+    border-bottom: 2px solid white;
+}
+
+#homsec :hover{
+    animation: none;
+} */
+
+@keyframes borderIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes borderOut {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* Apply the animation to the border */
+.list a {
+  position: relative;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.25s ease-in-out;
+}
+
+.list a:hover::after {
+  width: 100%;
+}
+
+.contactus {
+  padding: 10px 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  border-bottom: solid white 0px;
+  cursor: pointer;
+  border: 0;
+  margin-left: 10px;
+}
+
+.contactus a {
+  text-decoration: none;
+  color: black;
+}
+
+.listbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ------------- main container ----------- */
+
+.maincontainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+/* main container - profile section */
+
+.profilesection {
+  width: 20%;
+  height: 100%;
+  background-color: #114084;
+  padding: 6vmax 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  row-gap: 10px;
+}
+
+.profilesection img {
+  width: 170px;
+}
+
+.profilesection h3 {
+  font-size: 24px;
+}
+
+.namecontainer {
+  width: 100%;
+  text-align: center;
+}
+
+#logoutbtn {
+  padding: 9px 40px;
+  background-color: white;
+  border: 0;
+  border-radius: 15px;
+  margin-top: 12vmax;
+  cursor: pointer;
+}
+
+/* main container - investment section */
+
+.investmentsection {
+  width: 80%;
+  height: 100%;
+  background-color: white;
+  padding: 5vmax 30px;
+}
+
+.investmentsection h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 31px;
+  font-weight: 600;
+}
+
+.investmentsprofilediv {
+  margin-top: 20px;
+  border: solid #114084 4px;
+  width: fit-content;
+  padding: 20px 15px 10px;
+  border-radius: 20px;
+}
+
+.investmentsprofilediv .modelheading {
+  margin-bottom: 10px;
+}
+
+.sellbtn {
+  padding: 8px 60px;
+  background-color: #114084;
+  color: white;
+  border: 0;
+  margin-top: 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.sellbtndiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,body{
+    width: 100%;
+    height: 100%;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #114084; /* Color of the scrollbar handle */
+    border-radius: 3px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0a2c59; /* Darker color when hovering over the handle */
+  }
+}

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AEROXCHANGE:Invest</title>
+    <link rel="stylesheet" href="invest.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gruppo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gruppo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NavBar  -->
+
+    <nav class="navbar" id="navbar">
+      <h1 class="navtitle">AEROXCHANGE</h1>
+      <div class="listbtn">
+        <ul class="list">
+          <a href="index.html" id="homesec">Home</a>
+          <a href="invest.html" id="invest">Invest</a>
+          <a href="Profile.html" id="aboutus">Profile</a>
+          <a href="aboutus.html" id="aboutus">About Us</a>
+        </ul>
+        <button class="contactus" style="color: black">
+          <a href="contactus.html">Contact Us</a>
+        </button>
+      </div>
+    </nav>
+
+    <!-- invest section -->
+
+    <!-- Terms & Conditions -->
+
+    <!-- <div class="terms">
+      <h1 onclick="showPopupTerms()" class="tnc">Terms & Conditions *</h1>
+    </div> -->
+
+    <div class="popup-container" id="popup-container-terms">
+      <div class="popup-content-terms">
+        <button class="close-button-terms" onclick="closePopupTerms()">
+          ✖
+        </button>
+        <h2>Aeroxchange - Airplane Token Purchase Terms and Conditions *</h2>
+        <p>
+          <strong>Compliance:</strong> By purchasing airplane tokens through
+          Aeroxchange, you agree to comply with all local and international
+          regulations related to aviation asset tokenization. Aeroxchange
+          ensures compliance with these regulations in consultation with legal
+          experts.
+        </p>
+        <p>
+          <strong>Eligibility:</strong> You must be legally eligible to
+          participate in investment activities as per the laws of your
+          jurisdiction. Aeroxchange reserves the right to verify your
+          eligibility and may require additional documentation if necessary.
+        </p>
+        <p>
+          <strong>Investment Risks:</strong> Investing in airplane tokens
+          carries inherent risks, including but not limited to market
+          volatility, regulatory changes, and potential loss of investment. You
+          acknowledge and accept these risks before purchasing airplane tokens
+          through Aeroxchange.
+        </p>
+        <p>
+          <strong>Token Ownership:</strong> Upon purchase, you will receive
+          digital tokens representing fractional ownership of the specified
+          airplane asset. Aeroxchange will maintain records of token ownership
+          on the blockchain ledger.
+        </p>
+        <p>
+          <strong>Token Transferability:</strong> The airplane tokens purchased
+          through Aeroxchange may be transferable subject to the terms and
+          conditions outlined in the platform's token transfer policy.
+        </p>
+        <p>
+          <strong>Token Redemption:</strong> Aeroxchange does not guarantee the
+          redemption of airplane tokens for physical aircraft ownership. The
+          redemption process, if available, will be subject to the terms
+          specified by Aeroxchange and may be contingent upon market conditions
+          and regulatory approvals.
+        </p>
+        <p>
+          <strong>Fees and Charges:</strong> You may be subject to transaction
+          fees, administrative charges, and other expenses associated with
+          purchasing airplane tokens through Aeroxchange. These fees will be
+          disclosed to you before completing the transaction.
+        </p>
+        <p>
+          <strong>Governing Law:</strong> These terms and conditions shall be
+          governed by and construed in accordance with the laws of Government of
+          India, without regard to its conflict of law principles.
+        </p>
+        <p>
+          <strong>Dispute Resolution:</strong> Any dispute arising out of or in
+          connection with these terms and conditions shall be resolved through
+          arbitration in accordance with the rules of Indian Council of
+          Arbitration (ICA) , and the decision of the arbitrator shall be final
+          and binding on all parties.
+        </p>
+        <p>
+          <strong>Modification of Terms:</strong> Aeroxchange reserves the right
+          to modify or update these terms and conditions at any time without
+          prior notice. It is your responsibility to review the terms
+          periodically for any changes.
+        </p>
+      </div>
+    </div>
+
+    <!-- Airbus A380 -->
+
+    <section class="main-section-1">
+      <div class="main-div">
+        <div class="aircraft-image">
+          <img src="AirbusA320neo.jpg" alt="Airbus A380" />
+        </div>
+        <div class="aircraft-info">
+          <h2 id="modelname">Airbus A320neo</h2>
+          <p>Model: A319-A321</p>
+          <p>Price: ₹780 Cr.</p>
+          <p>Tokenized Portion: 50% (₹390 Cr.)</p>
+          <p>Price of One Token: ₹10,000</p>
+          <p>Equivalent in Ethereum:<span id="ethereum-price" style="color: white;margin: 5px;"></span></p>
+          <button class="invest-button">Invest</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- pop up -->
+
+    <div class="popup-container" id="popup-container">
+      <div class="popup-content">
+        <button class="close-button" onclick="closePopup()">✖</button>
+        <h2 class="company-name">AEROXCHANGE</h2>
+        <div class="airplane-thumbnail">
+          <img src="AirbusA320neo.jpg" alt="Airbus A380" />
+        </div>
+        <div class="input-fields">
+          <label for="num-tokens">No. of tokens to buy (minimum 1):</label>
+          <input
+            type="number"
+            id="num-tokens"
+            min="1"
+            value="1"
+            onchange="getTotalAmount()"
+          />
+          <p>Price of the tokens (in rupees): ₹ 10,000</p>
+          <p class="totalamount" id="totalamount">
+            Total amount: <span id="total-amount-rupees">1000</span> INR
+          </p>
+          <p>
+            Equivalent in Ethereum: <span id="total-amount-ethereum"></span> ETH
+          </p>
+        </div>
+        <button class="buy-button" id="firstbuybutton" onclick="openMetaMask()">Buy</button>
+        <!-- <button class="buy-button" id="firstbuybutton" onclick="openAlert()">Buy</button> -->
+      </div>
+    </div>
+
+    <!-- Boeing 777 -->
+
+    <!-- Pop up 2 -->
+
+    <!-- <div class="popup-container2" id="popup-container2">
+      <div class="popup-content">
+        <button class="close-button2" onclick="closePopup2()">✖</button>
+        <h2 class="company-name">AEROXCHANGE</h2>
+        <div class="airplane-thumbnail">
+          <img src="./airbusa380.jpg" alt="Airbus A380" />
+        </div>
+        <div class="input-fields">
+          <label for="num-tokens">No. of tokens to buy (minimum 1):</label>
+          <input
+            type="number"
+            id="num-tokens-1"
+            min="1"
+            value="1"
+            onchange="getTotalAmount()"
+          />
+          <p>Price of the tokens (in rupees): ₹ 5000</p>
+          <p class="totalamount">
+            Total amount: <span id="total-amount-rupees-1">1000</span> INR
+          </p>
+          <p>
+            Equivalent in Ethereum:
+            <span id="total-amount-ethereum-1"></span> ETH
+          </p>
+        </div>
+        <button class="buy-button2">Buy</button>
+      </div>
+    </div> -->
+
+    <footer class="footer" id="footer">
+      <div class="logo">
+        <p>
+          <span
+            style="
+              font-family: 'Gruppo', sans-serif;
+              font-size: 35px;
+              font-weight: 700;
+              color: white;
+              margin: 5px;
+            "
+            >AEROXCHANGE</span
+          >
+        </p>
+      </div>
+
+      <div class="footerNav">
+        <p>© 2024 Aeroxchange. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="investscript.js" type="text/javascript"></script>
+
+    <!-- Here we have sended the data to the firebase to use it in invest section -->
+    
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        get,
+        child,
+      } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
+
+      const firebaseConfiggetdata = {
+        apiKey: "AIzaSyAWNu1p2ivRTtmp3cAT04ifyicyxKNsvco",
+        authDomain: "aeroxchange-d99ca.firebaseapp.com",
+        projectId: "aeroxchange-d99ca",
+        storageBucket: "aeroxchange-d99ca.appspot.com",
+        messagingSenderId: "243314062567",
+        appId: "1:243314062567:web:9b7aa93a1c0699a56ade42",
+      };
+
+      const firebaseAppsendInvestData = initializeApp(firebaseConfiggetdata);
+      const authgetdata = getAuth(firebaseAppsendInvestData);
+      const db = getDatabase(firebaseAppsendInvestData);
+
+      document
+        .getElementById("firstbuybutton")
+        .addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const numberoftokensbuy = document.getElementById("num-tokens").value;
+          const totalamount = document.getElementById(
+            "total-amount-rupees"
+          ).innerText;
+          const ethEque = document.getElementById(
+            "total-amount-ethereum"
+          ).innerText;
+          const airplanemodel = document.getElementById("modelname").innerText;
+
+          if(numberoftokensbuy < 195000){
+
+            onAuthStateChanged(authgetdata, (user) => {
+            if (user) {
+              set(ref(db, "InvestorDetails/" + user.email.replace(".", "_")), {
+                tokens: numberoftokensbuy,
+                Amount: totalamount,
+                EthereumEque: ethEque,
+                Model: airplanemodel,
+              });
+
+              alert("Data updated in the profile section, contract validated Successfully");
+            }
+          });
+
+          }else{
+            alert("Number of Token's exceed, contract violated");
+          }
+
+          // onAuthStateChanged(authgetdata, (user) => {
+          //   if (user) {
+          //     set(ref(db, "InvestorDetails/" + user.email.replace(".", "_")), {
+          //       tokens: numberoftokensbuy,
+          //       Amount: totalamount,
+          //       EthereumEque: ethEque,
+          //       Model: airplanemodel,
+          //     });
+
+          //     alert("Data updated in the profile section, contract checked successfully");
+          //   }
+          // });
+        
+        });
+    </script>
+  </body>
+</html>
